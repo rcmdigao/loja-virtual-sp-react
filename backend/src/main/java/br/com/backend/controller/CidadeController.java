@@ -2,7 +2,6 @@ package br.com.backend.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.backend.entity.Cidade;
 import br.com.backend.service.CidadeService;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/cidade")
 public class CidadeController {
 
-    @Autowired
-    private CidadeService cidadeService;
+    private final CidadeService cidadeService;
 
     @GetMapping("/")
     public List<Cidade> buscarTodos() {

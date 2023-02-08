@@ -15,13 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.backend.entity.Marca;
 import br.com.backend.service.MarcaService;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/marca")
 public class MarcaController {
 
     @Autowired
-    private MarcaService marcaService;
+    private final MarcaService marcaService;
 
     @GetMapping("/")
     public List<Marca> buscarTodos() {
