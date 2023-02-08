@@ -12,37 +12,43 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.backend.entity.Estado;
-import br.com.backend.service.EstadoService;
+import br.com.backend.entity.Cidade;
+import br.com.backend.service.CidadeService;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/estado")
-public class EstadoController {
+@RequestMapping("/api/cidade")
+public class CidadeController {
 
-    private final EstadoService estadoService;
+    private final CidadeService cidadeService;
 
     @GetMapping("/")
-    public List<Estado> buscarTodos() {
-        return estadoService.buscarTodos();
+    public List<Cidade> buscarTodos() {
+        return cidadeService.buscarTodos();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Cidade> buscarPorId(@PathVariable Long id) {
+        Cidade objeto = cidadeService.buscarPorId(id);
+        return ResponseEntity.ok().body(objeto);
+
     }
 
     @PostMapping("/")
-    public Estado inserir(@RequestBody Estado estado) {
-        return estadoService.inserir(estado);
+    public Cidade inserir(@RequestBody Cidade objeto) {
+        return cidadeService.inserir(objeto);
     }
 
     @PutMapping("/")
-    public Estado alterar(@RequestBody Estado estado) {
-        return estadoService.alterar(estado);
+    public Cidade alterar(@RequestBody Cidade objeto) {
+        return cidadeService.alterar(objeto);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable("id") Long id) {
-        estadoService.excluir(id);
+        cidadeService.excluir(id);
         return ResponseEntity.ok().build();
     }
-
 
 }

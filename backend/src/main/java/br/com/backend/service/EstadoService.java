@@ -1,18 +1,19 @@
 package br.com.backend.service;
 
-import br.com.backend.entity.Estado;
-import br.com.backend.repository.EstadoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import br.com.backend.entity.Estado;
+import br.com.backend.repository.EstadoRepository;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 @Service
 public class EstadoService {
 
-    @Autowired
-    private EstadoRepository estadoRepository;
+    private final EstadoRepository estadoRepository;
 
     public List<Estado> buscarTodos() {
         return estadoRepository.findAll();
