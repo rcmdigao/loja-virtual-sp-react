@@ -15,8 +15,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "estado")
-public class Estado {
+@Entity(name = "permissao")
+public class Permissao {
 
     @Include
     @Id
@@ -26,9 +26,6 @@ public class Estado {
 
     @Column(name = "nome")
     private String nome;
-
-    @Column(name = "sigla")
-    private String sigla;
 
     @Column(name = "data_criacao")
     @Temporal(TemporalType.TIMESTAMP)

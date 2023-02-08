@@ -32,7 +32,7 @@ public class MarcaService {
     }
 
     public Marca alterar(Marca marca) {
-        marca.setDataAtualizaçao(new Date());
+        marca.setDataAtualizacao(new Date());
         return marcaRepository.saveAndFlush(marca);
     }
 

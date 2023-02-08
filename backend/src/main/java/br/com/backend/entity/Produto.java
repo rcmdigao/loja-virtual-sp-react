@@ -9,14 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
 import static javax.persistence.GenerationType.IDENTITY;
-@Getter @Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "estado")
-public class Estado {
+@Entity(name = "produto")
+public class Produto {
 
     @Include
     @Id
@@ -24,11 +24,25 @@ public class Estado {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "nome")
-    private String nome;
+    @Column(name = "descricao_curta")
+    private String descricaoCurta;
 
-    @Column(name = "sigla")
-    private String sigla;
+    @Column(name = "descricao_detalhada")
+    private String descricaoDetalhada;
+
+    @Column(name = "valor_custo")
+    private Double valorCusto;
+
+    @Column(name = "valor_venda")
+    private String valor_venda;
+
+    @ManyToOne
+    @JoinColumn(name = "idMarca")
+    private Marca marca;
+
+    @ManyToOne
+    @JoinColumn(name = "idCategoria")
+    private Categoria categoria;
 
     @Column(name = "data_criacao")
     @Temporal(TemporalType.TIMESTAMP)
@@ -37,4 +51,5 @@ public class Estado {
     @Column(name = "data_atualizacao")
     @Temporal(TemporalType.TIMESTAMP)
     private Date dataAtualizacao;
+
 }
