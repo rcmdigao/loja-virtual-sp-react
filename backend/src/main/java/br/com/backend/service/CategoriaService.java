@@ -32,7 +32,7 @@ public class CategoriaService {
     }
 
     public Categoria alterar(Categoria objeto) {
-        objeto.setDataAtualizaçao(new Date());
+        objeto.setDataAtualizacao(new Date());
         return categoriaRepository.saveAndFlush(objeto);
     }
 

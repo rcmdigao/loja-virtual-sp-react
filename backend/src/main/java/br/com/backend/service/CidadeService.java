@@ -32,7 +32,7 @@ public class CidadeService {
     }
 
     public Cidade alterar(Cidade objeto) {
-        objeto.setDataAtualizaçao(new Date());
+        objeto.setDataAtualizacao(new Date());
         return cidadeRepository.saveAndFlush(objeto);
     }
 
