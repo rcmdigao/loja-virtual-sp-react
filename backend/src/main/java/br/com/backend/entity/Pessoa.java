@@ -15,8 +15,8 @@ import static javax.persistence.GenerationType.IDENTITY;
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "marca")
-public class Marca {
+@Entity(name = "pessoa")
+public class Pessoa {
 
     @Include
     @Id
@@ -26,5 +26,27 @@ public class Marca {
 
     @Column(name = "nome")
     private String nome;
-   
+    @Column(name = "cpf")
+    private String cpf;
+    @Column(name = "email")
+    private String email;
+    @Column(name = "senha")
+    private String senha;
+    @Column(name = "endereco")
+    private String endereco;
+    @Column(name = "cep")
+    private String cep;
+
+    @ManyToOne
+    @JoinColumn(name = "idCidade")
+    private Cidade cidade;
+
+    @Column(name = "data_criacao")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataCriacao;
+
+    @Column(name = "data_atualizacao")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataAtualizacao;
+
 }

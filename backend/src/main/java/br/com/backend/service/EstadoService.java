@@ -1,6 +1,5 @@
 package br.com.backend.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -20,13 +19,11 @@ public class EstadoService {
     }
 
     public Estado inserir(Estado estado) {
-        estado.setDataCriacao(new Date());
         Estado estadoNovo = estadoRepository.saveAndFlush(estado);
         return estadoNovo;
     }
 
     public Estado alterar(Estado estado) {
-        estado.setDataAtualizaçao(new Date());
         return estadoRepository.saveAndFlush(estado);
     }
 

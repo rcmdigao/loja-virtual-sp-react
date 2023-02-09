@@ -1,6 +1,5 @@
 package br.com.backend.service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,13 +25,11 @@ public class MarcaService {
     }
 
     public Marca inserir(Marca marca) {
-        marca.setDataCriacao(new Date());
         Marca marcaNova = marcaRepository.saveAndFlush(marca);
         return marcaNova;
     }
 
     public Marca alterar(Marca marca) {
-        marca.setDataAtualizaçao(new Date());
         return marcaRepository.saveAndFlush(marca);
     }
 

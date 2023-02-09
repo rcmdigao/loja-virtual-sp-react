@@ -1,22 +1,27 @@
 package br.com.backend.entity;
 
-import lombok.*;
-import lombok.EqualsAndHashCode.Include;
-import javax.persistence.*;
-import java.util.Date;
+import static javax.persistence.GenerationType.IDENTITY;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.EqualsAndHashCode.Include;
+import lombok.NoArgsConstructor;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "marca")
-public class Marca {
+@Entity(name = "produto_imagens")
+public class ProdutoImagens {
 
     @Include
     @Id
@@ -26,5 +31,9 @@ public class Marca {
 
     @Column(name = "nome")
     private String nome;
-   
+
+    @ManyToOne
+    @JoinColumn(name = "idProduto")
+    private Produto produto;
+
 }

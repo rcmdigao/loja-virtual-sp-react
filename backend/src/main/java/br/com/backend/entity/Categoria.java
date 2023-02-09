@@ -11,12 +11,13 @@ import javax.persistence.Id;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "cidade")
-public class Cidade {
+@Entity(name = "categoria")
+public class Categoria {
 
     @Include
     @Id
@@ -24,9 +25,7 @@ public class Cidade {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "idEstado")
-    private Estado estado;
 }

@@ -9,14 +9,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import static javax.persistence.GenerationType.IDENTITY;
 
+import static javax.persistence.GenerationType.IDENTITY;
+@Getter @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-@Entity(name = "cidade")
-public class Cidade {
+@Entity(name = "permissao")
+public class Permissao {
 
     @Include
     @Id
@@ -24,9 +24,14 @@ public class Cidade {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
-    @ManyToOne
-    @JoinColumn(name = "idEstado")
-    private Estado estado;
+    @Column(name = "data_criacao")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataCriacao;
+
+    @Column(name = "data_atualizacao")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date dataAtualizacao;
 }

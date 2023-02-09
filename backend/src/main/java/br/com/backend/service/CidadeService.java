@@ -1,6 +1,5 @@
 package br.com.backend.service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,13 +25,11 @@ public class CidadeService {
     }
 
     public Cidade inserir(Cidade objeto) {
-        objeto.setDataCriacao(new Date());
         Cidade cidadeNova = cidadeRepository.saveAndFlush(objeto);
         return cidadeNova;
     }
 
     public Cidade alterar(Cidade objeto) {
-        objeto.setDataAtualizaçao(new Date());
         return cidadeRepository.saveAndFlush(objeto);
     }
 
