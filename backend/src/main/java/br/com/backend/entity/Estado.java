@@ -29,12 +29,4 @@ public class Estado {
 
     @Column(name = "sigla")
     private String sigla;
-
-    @Column(name = "data_criacao")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-
-    @Column(name = "data_atualizacao")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
 }

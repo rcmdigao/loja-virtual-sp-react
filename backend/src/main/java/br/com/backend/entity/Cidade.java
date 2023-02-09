@@ -29,12 +29,4 @@ public class Cidade {
     @ManyToOne
     @JoinColumn(name = "idEstado")
     private Estado estado;
-
-    @Column(name = "data_criacao")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-
-    @Column(name = "data_atualizacao")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
 }

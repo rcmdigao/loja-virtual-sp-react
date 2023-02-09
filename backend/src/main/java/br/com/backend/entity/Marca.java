@@ -26,13 +26,5 @@ public class Marca {
 
     @Column(name = "nome")
     private String nome;
-    
-    @Column(name = "data_criacao")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataCriacao;
-
-    @Column(name = "data_atualizacao")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAtualizacao;
-    
+   
 }
