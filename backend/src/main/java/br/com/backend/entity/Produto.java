@@ -34,7 +34,7 @@ public class Produto {
     private Double valorCusto;
 
     @Column(name = "valor_venda")
-    private String valor_venda;
+    private String valorVenda;
 
     @ManyToOne
     @JoinColumn(name = "idMarca")

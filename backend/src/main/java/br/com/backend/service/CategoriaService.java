@@ -1,6 +1,5 @@
 package br.com.backend.service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -26,13 +25,11 @@ public class CategoriaService {
     }
 
     public Categoria inserir(Categoria objeto) {
-        objeto.setDataCriacao(new Date());
         Categoria cidadeNova = categoriaRepository.saveAndFlush(objeto);
         return cidadeNova;
     }
 
     public Categoria alterar(Categoria objeto) {
-        objeto.setDataAtualizacao(new Date());
         return categoriaRepository.saveAndFlush(objeto);
     }
 
